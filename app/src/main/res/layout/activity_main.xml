@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!-- Barra superior -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/yellow">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MAPA"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"/>
+
+        <ImageView
+            android:id="@+id/ivNotification"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_sino"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"/>
+    </RelativeLayout>
+
+    <!-- Filtros -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="12dp"
+        android:background="@color/yellow">
+
+        <RadioGroup
+            android:id="@+id/rgStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/radio_button_selector"
+            >
+
+            <RadioButton
+                android:id="@+id/rbEmDiscussao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Em Discussão"
+                android:textColor="@drawable/radio_button_text_color"
+                android:background="@drawable/radio_button_selector"
+                android:button="@android:color/transparent"
+                android:textAlignment="center"
+                />
+
+            <RadioButton
+                android:id="@+id/rbSolucionados"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Solucionados"
+                android:textColor="@drawable/radio_button_text_color"
+                android:background="@drawable/radio_button_selector"
+                android:button="@android:color/transparent"
+                android:textAlignment="center"
+                android:paddingHorizontal="16dp"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <!-- Campo de busca -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="@drawable/gradient_background">
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Buscar"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="@drawable/search_background"
+        android:drawableStart="@drawable/ic_search"
+        android:layout_margin="8dp"/>
+    </LinearLayout>
+    <!-- Mapa -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/gradient_background"/>
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
+
+    <!-- Barra inferior -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/ivFeed"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_feed"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/ivMap"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_mapa"
+            android:layout_weight="1"/>
+
+        <!-- Botão de adicionar -->
+        <ImageView
+            android:id="@+id/ivAdd"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_adicionar"
+            android:elevation="4dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/ivMutirao"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_mutirao"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_perfil"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <!-- Cores principais -->
+    <color name="yellow">#FFD600</color> <!-- Amarelo (Fundo da barra superior) -->
+    <color name="purple">#6200EE</color> <!-- Roxo (Título "MAPA") -->
+    <color name="white">#FFFFFF</color> <!-- Branco (Fundo da barra inferior) -->
+    <color name="black">#000000</color> <!-- Preto (Textos) -->
+    <color name="light_yellow">#FFF5C2</color> <!-- Preto (Textos) -->
+
+
+    <!-- Cores de ícones e botões -->
+    <color name="gray">#9E9E9E</color> <!-- Cinza (Ícones desativados) -->
+    <color name="dark_gray">#424242</color> <!-- Cinza escuro (Texto do filtro) -->
+    <color name="blue">#03A9F4</color> <!-- Azul claro (Destaques e ações) -->
+    <color name="green">#4CAF50</color> <!-- Verde (Possível status de sucesso) -->
+    <color name="red">#F44336</color> <!-- Vermelho (Erros ou alertas) -->
+</resources>

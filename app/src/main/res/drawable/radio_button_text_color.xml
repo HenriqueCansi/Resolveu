@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Cor do texto quando o botão está ativado -->
+    <item android:state_checked="true" android:color="@color/yellow"/>
+    <!-- Cor do texto quando o botão está desativado -->
+    <item android:color="@color/black"/>
+</selector>
