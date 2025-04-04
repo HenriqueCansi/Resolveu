@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/yellow"
+    android:padding="24dp">
+
+    <!-- Ícone Principal -->
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_mega_phone"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESOLVEU?"
+        android:src="@drawable/ic_mega_phone"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Descrição -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="projeto colaborativo focado\n em reconhecer e promover os\n problemas da cidade"
+        android:textSize="16sp"
+        android:textColor="@color/purple"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Botão Cadastrar -->
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quero me cadastrar"
+        android:textSize="18sp"
+        android:background="@drawable/button_purple"
+        android:textColor="@color/white"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botão Já sou cadastrado -->
+    <Button
+        android:id="@+id/btnJaCadastrado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Já sou cadastrado"
+        android:textSize="18sp"
+        android:background="@drawable/button_outline"
+        android:textColor="@color/purple"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnEntrarSemCadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Entrar sem cadastro"
+        android:textAllCaps="false"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/transparent"
+        android:textColor="@color/purple"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+</LinearLayout>

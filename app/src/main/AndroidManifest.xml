@@ -15,18 +15,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Resolveu"
         tools:targetApi="31">
+
+        <!-- Tela de Login (Inicial) -->
         <activity
-            android:name=".MainActivity"
+            android:name=".frm_Login.Panel.frm_Login_pnlLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Tela Principal -->
+        <activity
+            android:name=".frm_Principal.Panel.frm_Principal_pnlPrincipal"
+            android:exported="true"/>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key"/>
-    </application>
 
+    </application>
 </manifest>

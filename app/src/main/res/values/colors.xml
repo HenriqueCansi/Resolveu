@@ -4,7 +4,6 @@
     <color name="purple">#6200EE</color> <!-- Roxo (Título "MAPA") -->
     <color name="white">#FFFFFF</color> <!-- Branco (Fundo da barra inferior) -->
     <color name="black">#000000</color> <!-- Preto (Textos) -->
-    <color name="light_yellow">#FFF5C2</color> <!-- Preto (Textos) -->
 
 
     <!-- Cores de ícones e botões -->
@@ -13,4 +12,8 @@
     <color name="blue">#03A9F4</color> <!-- Azul claro (Destaques e ações) -->
     <color name="green">#4CAF50</color> <!-- Verde (Possível status de sucesso) -->
     <color name="red">#F44336</color> <!-- Vermelho (Erros ou alertas) -->
+    <color name="purple_light">#A37ACC</color>
+    <color name="light_yellow">#FFF5C2</color> <!-- Preto (Textos) -->
+    <color name="purple_dark">#4A148C</color>
+
 </resources>

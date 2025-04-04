@@ -1,22 +1,19 @@
-package obj.resolveu;
+package obj.resolveu.frm_Principal.Panel;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
-import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 
 import obj.resolveu.R;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback
+public class frm_Principal_pnlPrincipal extends AppCompatActivity implements OnMapReadyCallback
 {
 
 	private MapView mapView;
@@ -28,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.frm_principal_pnlprincipal);
 
 		// Inicializando componentes
 		etSearch = findViewById(R.id.etSearch);
