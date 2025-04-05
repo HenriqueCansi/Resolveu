@@ -1,108 +1,85 @@
 package obj.resolveu.frm_Principal.Panel;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 
 import obj.resolveu.R;
+import obj.resolveu.WMSActivity;
+import obj.resolveu.WMSView;
 
-public class frm_Principal_pnlPrincipal extends AppCompatActivity implements OnMapReadyCallback
+public class frm_Principal_pnlPrincipal extends WMSView implements OnMapReadyCallback
 {
-
-	private MapView mapView;
+	public static frm_Principal_pnlPrincipal __obj = new frm_Principal_pnlPrincipal();
+	private LinearLayout layout;
 	private GoogleMap googleMap;
-	private EditText etSearch;
-	private ImageView ivNotification, ivMap, ivAdd, ivProfile;
+	public MapView mapView;
+	private Bundle mapViewBundle;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState)
+	public LinearLayout getLayout()
 	{
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.frm_principal_pnlprincipal);
+		if (layout == null)
+		{
+			LayoutInflater inflater = LayoutInflater.from(WMSActivity.__activity);
+			layout = (LinearLayout) inflater.inflate(R.layout.frm_principal_pnlprincipal, null);
+		}
+		return layout;
+	}
 
-		// Inicializando componentes
-		etSearch = findViewById(R.id.etSearch);
-		ivNotification = findViewById(R.id.ivNotification);
-		ivMap = findViewById(R.id.ivMap);
-		ivAdd = findViewById(R.id.ivAdd);
-		ivProfile = findViewById(R.id.ivProfile);
-		mapView = findViewById(R.id.mapView);
+	@Override
+	public void OnActivated()
+	{
+		// Criar novo Bundle se necessário
+		if (mapViewBundle == null)
+		{
+			mapViewBundle = new Bundle();
+		}
 
-		// Inicializando o MapView
-		mapView.onCreate(savedInstanceState);
+		mapView = layout.findViewById(R.id.mapView);
+		mapView.onCreate(new Bundle());
 		mapView.getMapAsync(this);
 
-		// Alternar entre "Em discussão" e "Solucionados"
-		RadioGroup rgStatus = findViewById(R.id.rgStatus);
+		EditText etSearch = layout.findViewById(R.id.etSearch);
+		ImageView ivNotification = layout.findViewById(R.id.ivNotification);
+		ImageView ivMap = layout.findViewById(R.id.ivMap);
+		ImageView ivAdd = layout.findViewById(R.id.ivAdd);
+		ImageView ivProfile = layout.findViewById(R.id.ivProfile);
+
+		RadioGroup rgStatus = layout.findViewById(R.id.rgStatus);
 		rgStatus.setOnCheckedChangeListener((group, checkedId) -> {
-			if (checkedId == R.id.rbEmDiscussao)
-			{
-				// Atualizar mapa para mostrar "Em discussão"
-			}
-			else
-			{
-				// Atualizar mapa para mostrar "Solucionados"
-			}
+			// Alternar entre "Em discussão" e "Solucionados"
 		});
 
-		// Ações de clique nos ícones
 		ivNotification.setOnClickListener(v -> {
-			// Abrir tela de notificações
+			// Ação da notificação
 		});
 
 		ivMap.setOnClickListener(v -> {
-			// Atualizar para visualizar mapa
+			// Ação do mapa
 		});
 
 		ivAdd.setOnClickListener(v -> {
-			// Abrir tela para adicionar novo marcador
+			// Ação do adicionar
 		});
 
 		ivProfile.setOnClickListener(v -> {
-			// Abrir tela de perfil do usuário
+			// Ação do perfil
 		});
 	}
 
+	// Método de retorno do mapa pronto
 	@Override
 	public void onMapReady(GoogleMap map)
 	{
-		googleMap = map;
-		// Configurações adicionais do mapa (ex: zoom, marcadores, etc.)
-	}
-
-	// Métodos do ciclo de vida do MapView
-	@Override
-	protected void onResume()
-	{
-		super.onResume();
-		mapView.onResume();
-	}
-
-	@Override
-	protected void onPause()
-	{
-		super.onPause();
-		mapView.onPause();
-	}
-
-	@Override
-	protected void onDestroy()
-	{
-		super.onDestroy();
-		mapView.onDestroy();
-	}
-
-	@Override
-	public void onLowMemory()
-	{
-		super.onLowMemory();
-		mapView.onLowMemory();
+		this.googleMap = map;
+		// Aqui você pode configurar o mapa (zoom, marcadores etc.)
 	}
 }

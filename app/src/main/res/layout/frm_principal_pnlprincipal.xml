@@ -131,7 +131,6 @@
             android:layout_weight="1"
             android:src="@drawable/ic_mapa" />
 
-        <!-- Botão de adicionar -->
         <ImageView
             android:id="@+id/ivAdd"
             android:layout_width="56dp"

@@ -1,44 +1,41 @@
 package obj.resolveu.frm_Login.Panel;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import obj.resolveu.WMSActivity;
+import obj.resolveu.WMSView;
 import obj.resolveu.frm_Principal.Panel.frm_Principal_pnlPrincipal;
 import obj.resolveu.R;
 
-public class frm_Login_pnlLogin extends AppCompatActivity {
+import android.view.LayoutInflater;
+import android.widget.LinearLayout;
 
-    private Button btnEntrarSemCadastro;
-    private Button btnCadastrar;
-    private ImageView ivLogo;
+public class frm_Login_pnlLogin extends WMSView {
+    public static frm_Login_pnlLogin __obj = new frm_Login_pnlLogin();
+    private LinearLayout layout;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.frm_login_pnllogin);
-
-        btnEntrarSemCadastro = findViewById(R.id.btnEntrarSemCadastro);
-        btnCadastrar = findViewById(R.id.btnCadastrar);
-        ivLogo = findViewById(R.id.ivLogo);
-
-
-        btnEntrarSemCadastro.setOnClickListener(v -> {
-            Intent intent = new Intent(frm_Login_pnlLogin.this, frm_Principal_pnlPrincipal.class);
-            startActivity(intent);
-            finish(); // Fecha a tela de login para não voltar com "voltar"
-        });
-
-        btnCadastrar.setOnClickListener(v -> {
-            //Intent intent = new Intent(LoginActivity.this, TelaCadastroActivity.class);
-            //startActivity(intent);
-            // Aqui você pode ou não finalizar essa activity
-        });
-
+    public LinearLayout getLayout() {
+        if (layout == null) {
+            LayoutInflater inflater = LayoutInflater.from(WMSActivity.__activity);
+            layout = (LinearLayout) inflater.inflate(R.layout.frm_login_pnllogin, null);
+        }
+        return layout;
     }
 
+    @Override
+    public void OnActivated() {
+        Button btnCadastrar = getLayout().findViewById(R.id.btnCadastrar);
+        Button btnSemCadastro = getLayout().findViewById(R.id.btnEntrarSemCadastro);
 
+        btnCadastrar.setOnClickListener(v -> {
+            // Aqui você pode adicionar validação antes de entrar
+            frm_Principal_pnlPrincipal.__obj.Show();
+        });
+
+        btnSemCadastro.setOnClickListener(v -> {
+            frm_Principal_pnlPrincipal.__obj = new frm_Principal_pnlPrincipal();
+            frm_Principal_pnlPrincipal.__obj.Show();
+        });
+    }
 }
