@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import obj.resolveu.frm_Login.Panel.frm_Login_pnlLogin;
 import obj.resolveu.frm_Principal.Panel.frm_Principal_pnlPrincipal;
 
-public class WMSActivity extends Activity {
-    public static WMSActivity __activity;
-    public static ArrayList<WMSView> __views = new ArrayList<>();
+public class RvActivity extends Activity {
+    public static RvActivity __activity;
+    public static ArrayList<RvView> __views = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class WMSActivity extends Activity {
         frm_Login_pnlLogin.__obj.Show();
     }
 
-    public static LinearLayout criaTela(WMSView view) {
+    public static LinearLayout criaTela(RvView view) {
         return view.getLayout();
     }
 

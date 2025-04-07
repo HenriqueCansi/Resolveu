@@ -12,10 +12,10 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 
 import obj.resolveu.R;
-import obj.resolveu.WMSActivity;
-import obj.resolveu.WMSView;
+import obj.resolveu.RvActivity;
+import obj.resolveu.RvView;
 
-public class frm_Principal_pnlPrincipal extends WMSView implements OnMapReadyCallback
+public class frm_Principal_pnlPrincipal extends RvView implements OnMapReadyCallback
 {
 	public static frm_Principal_pnlPrincipal __obj = new frm_Principal_pnlPrincipal();
 	private LinearLayout layout;
@@ -28,7 +28,7 @@ public class frm_Principal_pnlPrincipal extends WMSView implements OnMapReadyCal
 	{
 		if (layout == null)
 		{
-			LayoutInflater inflater = LayoutInflater.from(WMSActivity.__activity);
+			LayoutInflater inflater = LayoutInflater.from(RvActivity.__activity);
 			layout = (LinearLayout) inflater.inflate(R.layout.frm_principal_pnlprincipal, null);
 		}
 		return layout;
