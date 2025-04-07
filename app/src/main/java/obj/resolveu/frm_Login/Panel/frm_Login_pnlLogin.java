@@ -27,10 +27,18 @@ public class frm_Login_pnlLogin extends RvView {
     public void OnActivated() {
         Button btnCadastrar = getLayout().findViewById(R.id.btnCadastrar);
         Button btnSemCadastro = getLayout().findViewById(R.id.btnEntrarSemCadastro);
+        Button btnJaCadastrado = getLayout().findViewById(R.id.btnJaCadastrado);
 
         btnCadastrar.setOnClickListener(v -> {
-            // Aqui você pode adicionar validação antes de entrar
-            frm_Principal_pnlPrincipal.__obj.Show();
+            frm_Login_pnlCadastrar.__obj = new frm_Login_pnlCadastrar();
+            frm_Login_pnlCadastrar.__obj.Show();
+            this.Hide();
+        });
+
+        btnJaCadastrado.setOnClickListener(v -> {
+            frm_Login_pnlEntrar.__obj = new frm_Login_pnlEntrar();
+            frm_Login_pnlEntrar.__obj.Show();
+            this.Hide();
         });
 
         btnSemCadastro.setOnClickListener(v -> {

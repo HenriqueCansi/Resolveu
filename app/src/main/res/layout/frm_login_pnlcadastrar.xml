@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutCadastrar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9F9"
+    android:padding="24dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <!-- Botão voltar -->
+    <ImageView
+        android:id="@+id/ivVoltar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_arrow_back"
+        android:layout_gravity="start"
+        android:contentDescription="Voltar"
+        android:padding="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastre-se"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Botão Google -->
+    <ImageButton
+        android:id="@+id/btnGoogleLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_google_logo"
+        android:background="@android:color/transparent"
+        android:contentDescription="Entrar com Google"
+        android:layout_marginBottom="16dp" />
+
+
+    <!-- Separador "ou" -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="#CCC" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  ou  "
+            android:textColor="#777" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="#CCC" />
+    </LinearLayout>
+
+    <!-- Nome -->
+    <EditText
+        android:id="@+id/edtNome"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Preencha seu nome"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Email -->
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Preencha seu e-mail"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Senha -->
+    <EditText
+        android:id="@+id/edtSenha"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Crie uma senha"
+        android:inputType="textPassword"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Termos e condições -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="24dp">
+
+        <CheckBox
+            android:id="@+id/chkTermos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#5C2D91" />
+
+        <TextView
+            android:id="@+id/tvTermos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Eu aceito os Termos e Condições"
+            android:textColor="#555" />
+    </LinearLayout>
+
+    <!-- Botão cadastrar -->
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Cadastrar"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_roxo_borda"
+        android:textColor="#5C2D91"
+        android:enabled="false"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Já tenho conta -->
+    <TextView
+        android:id="@+id/txtJaTenhoCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Já tenho um cadastro"
+        android:textColor="#5C2D91"
+        android:textStyle="bold" />
+</LinearLayout>

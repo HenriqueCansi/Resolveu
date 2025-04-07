@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutEntrar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#F9F9F9"
+    android:gravity="center_horizontal">
+
+    <!-- Botão voltar -->
+    <ImageView
+        android:id="@+id/ivVoltar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_arrow_back"
+        android:layout_gravity="start"
+        android:contentDescription="Voltar"
+        android:padding="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entrar"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Email -->
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Digite seu e-mail"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Senha -->
+    <EditText
+        android:id="@+id/edtSenha"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Digite sua senha"
+        android:inputType="textPassword"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Esqueceu a senha -->
+    <TextView
+        android:id="@+id/tvEsqueceuSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Esqueci minha senha"
+        android:textColor="#5C2D91"
+        android:textSize="14sp"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Botão entrar -->
+    <Button
+        android:id="@+id/btnEntrar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Entrar"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_roxo_borda"
+        android:textColor="#5C2D91"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Ainda não tem conta -->
+    <TextView
+        android:id="@+id/tvCadastrarAgora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ainda não tenho cadastro"
+        android:textColor="#5C2D91"
+        android:textStyle="bold" />
+</LinearLayout>
