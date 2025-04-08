@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import obj.resolveu.frm_Login.Panel.frm_Login_pnlLogin;
 import obj.resolveu.frm_Principal.Panel.frm_Principal_pnlPrincipal;
+import com.google.firebase.FirebaseApp;
 
 public class RvActivity extends Activity {
     public static RvActivity __activity;
@@ -15,6 +16,10 @@ public class RvActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Inicializa o Firebase
+        FirebaseApp.initializeApp(this);
+
         __activity = this;
 
         // Iniciar com a tela de login

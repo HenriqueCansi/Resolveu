@@ -7,48 +7,75 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import obj.resolveu.R;
 import obj.resolveu.RvActivity;
 import obj.resolveu.RvView;
+import obj.resolveu.frm_Principal.Panel.frm_Principal_pnlPrincipal;
 
-public class frm_Login_pnlEntrar extends RvView {
-    public static frm_Login_pnlEntrar __obj = new frm_Login_pnlEntrar();
-    private LinearLayout layout;
+public class frm_Login_pnlEntrar extends RvView
+{
+	public static frm_Login_pnlEntrar __obj = new frm_Login_pnlEntrar();
+	private LinearLayout layout;
+	private FirebaseAuth mAuth;
 
-    @Override
-    public LinearLayout getLayout() {
-        if (layout == null) {
-            LayoutInflater inflater = LayoutInflater.from(RvActivity.__activity);
-            layout = (LinearLayout) inflater.inflate(R.layout.frm_login_pnlentrar, null);
-        }
-        return layout;
-    }
+	@Override
+	public LinearLayout getLayout()
+	{
+		if (layout == null)
+		{
+			LayoutInflater inflater = LayoutInflater.from(RvActivity.__activity);
+			layout = (LinearLayout) inflater.inflate(R.layout.frm_login_pnlentrar, null);
+		}
+		return layout;
+	}
 
-    @Override
-    public void OnActivated() {
-        EditText edtEmail = layout.findViewById(R.id.edtEmail);
-        EditText edtSenha = layout.findViewById(R.id.edtSenha);
-        Button btnEntrar = layout.findViewById(R.id.btnEntrar);
-        TextView txtNaoTenhoCadastro = layout.findViewById(R.id.tvCadastrarAgora);
+	@Override
+	public void OnActivated()
+	{
+		EditText edtEmail = layout.findViewById(R.id.edtEmail);
+		EditText edtSenha = layout.findViewById(R.id.edtSenha);
+		Button btnEntrar = layout.findViewById(R.id.btnEntrar);
+		TextView txtNaoTenhoCadastro = layout.findViewById(R.id.tvCadastrarAgora);
 
-        btnEntrar.setOnClickListener(v -> {
-            String email = edtEmail.getText().toString();
-            String senha = edtSenha.getText().toString();
+		mAuth = FirebaseAuth.getInstance();
 
-            if (email.isEmpty() || senha.isEmpty()) {
-                Toast.makeText(RvActivity.__activity, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
-                return;
-            }
+		btnEntrar.setOnClickListener(v -> {
+			String email = edtEmail.getText().toString();
+			String senha = edtSenha.getText().toString();
 
-            // TODO: Validação com banco de dados
-            Toast.makeText(RvActivity.__activity, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show();
+			if (email.isEmpty() || senha.isEmpty())
+			{
+				Toast.makeText(RvActivity.__activity, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+				return;
+			}
 
-            // TODO: Ir para tela principal
-        });
+			mAuth.signInWithEmailAndPassword(email, senha)
+					.addOnCompleteListener(task -> {
+						if (task.isSuccessful())
+						{
+							Toast.makeText(RvActivity.__activity, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show();
 
-        txtNaoTenhoCadastro.setOnClickListener(v -> {
-            frm_Login_pnlCadastrar.__obj.Show();
-            this.Hide();
-        });
-    }
+							if (frm_Principal_pnlPrincipal.__obj == null)
+								frm_Principal_pnlPrincipal.__obj = new frm_Principal_pnlPrincipal();
+
+							frm_Principal_pnlPrincipal.__obj.Show();
+							this.Hide();
+
+						}
+						else
+						{
+							Toast.makeText(RvActivity.__activity, "Erro ao fazer login: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+							return;
+						}
+					});
+
+		});
+
+		txtNaoTenhoCadastro.setOnClickListener(v -> {
+			frm_Login_pnlCadastrar.__obj.Show();
+			this.Hide();
+		});
+	}
 }
