@@ -132,7 +132,6 @@
         android:textAllCaps="false"
         android:background="@drawable/btn_roxo_borda"
         android:textColor="#5C2D91"
-        android:enabled="false"
         android:layout_marginBottom="16dp" />
 
     <!-- Já tenho conta -->
